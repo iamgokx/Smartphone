@@ -1,0 +1,52 @@
+.messagesNotifications {
+  width: 90%;
+  height: 80px;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  overflow: hidden;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+
+.messagesNotifications:hover {
+  background-color: rgba(255, 255, 255, 0.041);
+}
+
+.messageContactIcon {
+  scale: 3.5;
+  transform-origin: top;
+  color: skyblue;
+}
+
+.messageNotificationsContent {
+  width: 200px;
+  height: 80%;
+}
+
+.messageContent {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: small;
+  font-family: "Montserrat", sans-serif;
+}
+
+.messageTime {
+  color: skyblue;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.notificationNumber {
+  scale: 1.5;
+}
+
+
+

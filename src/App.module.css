@@ -1,0 +1,67 @@
+#mobileScreenContainer {
+  width: 400px;
+  height: 800px;
+  background-color: rgb(0, 0, 0);
+  border: 8px solid rgb(32, 31, 31);
+  border-radius: 30px;
+  overflow: hidden;
+  position: absolute;
+  -webkit-box-shadow: 0px 3px 11px 15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 11px 15px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 11px 15px rgba(0,0,0,0.75);
+  z-index: 2;
+}
+
+.mobileFrame{
+  width: 410px;
+  height: 810px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+.mobileScreenScrollcont{
+  width: auto;
+  height: 100%;
+  /* overflow: scroll; */
+  display: flex;
+  flex-direction: row;
+}
+
+.navDiv {
+  width: 400px;
+  height: 25px;
+  position: absolute;
+  z-index:10;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.cameraPunchHole{
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  border: 2px double rgb(124, 124, 124);
+  z-index: 100;
+  transform: translateX(-50%)
+}
+
+.powerBtn{
+  width: 10px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.342);
+  position:absolute;
+  right: 0;
+  top: 35%;
+  z-index: 0;
+  scale: 1.2;
+}
+
+.powerBtn:hover{
+  background-color: white;
+}

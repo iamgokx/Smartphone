@@ -1,0 +1,170 @@
+.LockScreenContainer {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/LockScreen/lock.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cont {
+  width: 400px;
+  height: auto;
+  overflow-y: hidden;
+}
+
+.clockContainer {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50px;
+ 
+}
+
+.clockDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.passwordScreen {
+  width: 100%;
+  height: 800px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #0000003f;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(11px);
+}
+
+.passwordScreen p {
+  margin-top: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+.lockScreenPassKeysContainer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.passwordKeysClicked {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.key {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.key1,
+.key2,
+.key3,
+.key4 {
+  background-color: transparent;
+}
+
+.passwordKeypad {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.passwordKeypadKeys {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+  border-radius: 50%;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+.keypadNum {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.passwordKeypadKeys:hover:not(.avoidKey) {
+  background-color: rgba(255, 255, 255, 0.212);
+  transition: 0.5s;
+}
+
+.cameraAppDiv {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-self: flex-end;
+  margin: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transform-origin: bottom right;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+
+.FullcameraAppDiv {
+  width: 100%;
+  height: 100%;
+background-color: red;
+  align-self: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transform-origin: bottom right;
+}
+
+.cameraAppDiv:hover {
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+.lockScreenCameraIcon {
+  scale: 1.5;
+}

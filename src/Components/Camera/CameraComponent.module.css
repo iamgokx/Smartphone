@@ -1,0 +1,110 @@
+#cameraDisplay {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cameraSettingsDiv {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 15px;
+  color: white;
+}
+
+.cameraIcons {
+  scale: 1;
+}
+
+.vidoeDiv{
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.videoScreen {
+  width: 160%;
+  /* height: 80%; */
+  transform: translateX(-25%);
+  justify-self: center;
+}
+
+.cameraOpeationDiv {
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 40px;
+  align-items: center;
+}
+
+.cameraModes{
+  width: 100%;
+  height: auto;
+  font-size: smaller;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.cameraModesList{
+  width: 50px;
+  text-align: center;
+}
+
+.cameraActiveMode{
+  color: gold;
+}
+
+.cameraFuctionDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.cameraGallery{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+ background-image: url(./hero.jpg);
+ background-size: cover;
+ opacity: 0.8;
+}
+.cameraBtn{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+ border: 5px solid white;
+}
+
+.cameraBtn:hover{
+  background-color: white;
+}
+.cameraSwitch{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.cameraSwitchIcon{
+  scale: 1.8;
+}
+
+
+
+

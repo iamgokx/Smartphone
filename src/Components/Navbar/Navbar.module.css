@@ -1,0 +1,53 @@
+.navbar {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+
+  transform: translateY(-10px);
+  animation: scaleani 1s ease 1 forwards;
+  font-family: "Montserrat", sans-serif;
+}
+
+@keyframes scaleani {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.navTopDiv {
+  width: 100%;
+  height: 24px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navTopDivLeft {
+  width: 50%;
+  height: 24px;
+  border-top-left-radius: 30px;
+
+  text-indent: 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+.navTopDivRight {
+  width: 50%;
+  height: 24px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+  align-items: center;
+}
+
+.battery {
+  scale: 1.2;
+}
+.batteryIndication {
+  margin-right: 20px;
+}

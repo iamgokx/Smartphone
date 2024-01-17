@@ -1,0 +1,422 @@
+.homeContainer {
+  width: 400px;
+  height: 800px;
+  color: black;
+  background-image: url("../../assets/Home/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+
+  overflow: hidden;
+  transform: translateY(10%);
+  scale: 1.2;
+  animation: scaleani 0.5s ease 1 forwards;
+  z-index: 1;
+}
+
+@keyframes scaleani {
+  to {
+    transform: translateY(0%);
+    scale: 1;
+  }
+}
+
+.homeCont {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translateY(10%);
+  scale:2;
+  animation: scaleani 0.5s ease 1 forwards;
+}
+
+.homePages {
+  width: 100%;
+  height: 80%;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.homePageOne {
+  width: 100%;
+  height: 100%;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.homePageTwo {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content:center;
+  gap: 4%;
+  padding-top: 40px;
+  color: white;
+  font-size: small;
+}
+
+
+.settingsApk{
+  background-image: url(../../assets/Home/settings.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
+.homePageIndex {
+  height: 3%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pg {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(165, 237, 255, 0.774);
+}
+
+.googleSearchBox {
+  width: 80%;
+  height: 50px;
+  color: white;
+  background-color: rgb(24, 22, 22);
+  margin-top: 20%;
+  margin-left: 2%;
+  border-radius: 30px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.googleSearchBox:hover {
+  background-color: rgb(37, 35, 35);
+}
+
+.googleIconsDiv {
+  display: flex;
+  gap: 30px;
+  margin-right: 5%;
+}
+.googleIcon {
+  margin-left: 5%;
+  scale: 2;
+}
+
+.googleVoiceSearch {
+  width: 20px;
+}
+.googleCamerSeach {
+  width: 30px;
+}
+
+.digitalWellBeing {
+  width: 37%;
+  height: auto;
+  color: white;
+  background-color: rgb(24, 22, 22);
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 20px;
+  margin-left: 2%;
+}
+
+.dgbHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dgbHours {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 900;
+}
+.dgbDiv {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+
+  padding-bottom: 10px;
+}
+
+.dibDivs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: -10px;
+  gap: 10px;
+}
+
+.roundHourDivs {
+  width: 40px;
+  height: 40px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
+
+.roundHourDivsTwo {
+  background-color: rgb(41, 177, 255);
+}
+.roundHourDivsThree {
+  background-color: rgb(118, 216, 255);
+}
+
+.PageOneapps {
+  width: 90%;
+  height: 30%;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  font-size: smaller;
+}
+
+.pageOneApks {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.apsCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.apsCont span {
+  font-size: 13px;
+}
+
+.galleryApk {
+  background-image: url(../../assets/Home/photos.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.googleApk {
+  background-image: url(../../assets/Home/google.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.playstoreApk {
+  background-image: url(../../assets/Home/playstore.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.themesApk {
+  background-image: url(../../assets/Home/themes.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.safetyApk {
+  background-image: url(../../assets/Home/securit.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.assistantapk {
+  background-image: url(../../assets/Home/assistant.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.securityApk {
+  background-image: url(../../assets/Home/securit.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.getappsApk {
+  background-image: url(../../assets/Home/getaps.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.cleanerApk {
+  background-image: url(../../assets/Home/cleaner.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.chromeApk {
+  background-image: url(../../assets/Home/chrome.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.homePageFooter {
+  width: 400px;
+  height: 17%;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 60px;
+}
+
+.bottomApks {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  margin-bottom: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: bottom;
+  transition: 0.5s ease;
+}
+
+.callApk {
+  background-image: url(../../assets/Home/call.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.contactApk {
+  background-image: url(../../assets/Home/contact.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cameraApk {
+  background-image: url(../../assets/Home/camera.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.messagesApk {
+  background-image: url(../../assets/Home/message.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.appFullScreen {
+  width: 400px;
+  height: 800px;
+  position: relative;
+  top: 0%;
+  border-radius: 0;
+  position: absolute;
+  background-color: black;
+  background-image: none;
+}
+
+.navigationCont {
+  width: 100%;
+  height: 7.5%;
+  padding: 5px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(16, 2, 39, 0.541);
+  backdrop-filter: blur(20px);
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 15%;
+}
+
+.minimizeBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleBorder {
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeBtnIcon {
+  scale: 0.7;
+}
+
+.backBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backBtbIcon {
+  scale: 1.3;
+}
