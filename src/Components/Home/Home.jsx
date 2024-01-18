@@ -1,15 +1,15 @@
 import styles from "./Home.module.css";
 import { MdOutlineRefresh } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
-import { FaSquare } from "react-icons/fa6";
-import { FaCircle } from "react-icons/fa6";
+
 import { useState } from "react";
-import { IoCaretBackOutline } from "react-icons/io5";
 import CameraComponent from "../Camera/CameraComponent.jsx";
 import Phone from "../Phone/Phone.jsx";
 import Contacts from "../Contacts/Contacts.jsx";
 import Messages from "../Messages/Messages.jsx";
 import { useRef } from "react";
+import NavigationKeys from "../NavigationKeys/NavigationKeys.jsx";
+// import Apps from "../App/Apps.jsx";
 
 function Home() {
   //home swip
@@ -47,20 +47,23 @@ function Home() {
   // const [activeAppsList, setActiveApp] = useState("");
 
   const handleBackBtnClick = () => {
-    let activeAppName = null;
+    const apk = document.querySelector("." + styles.appsRenderDiv);
+    apk.classList.remove(styles.appFullScreen);
+    setTimeout(() => {
+      let activeAppName = null;
     setAppsStatusList((prevAppsStatusList) => {
       const updatedList = prevAppsStatusList.map((app) => {
         if (app.appStatus === true) {
           activeAppName = app.appName;
 
-          const apk = document.querySelector("." + styles[activeAppName]);
-          apk.classList.remove(styles.appFullScreen);
+          // const apk = document.querySelector("." + styles[activeAppName]);
         }
+        
         return { ...app, appStatus: false };
       });
-
       return updatedList;
     });
+    }, 500);
   };
 
   //aps rendering
@@ -77,7 +80,8 @@ function Home() {
         setAppsStatusList(updatedAppsStatusList);
       }
     }, 500);
-    const apk = document.querySelector("." + styles[app]);
+    // const apk = document.querySelector("." + styles[app]);
+    const apk = document.querySelector("." + styles.appsRenderDiv);
     apk.classList.add(styles.appFullScreen);
   };
 
@@ -120,6 +124,15 @@ function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.homeCont}>
+        <div className={styles.appsRenderDiv}>
+          {findAppStatus("callApk") && <Phone></Phone>}
+
+          {findAppStatus("contactApk") && <Contacts></Contacts>}
+
+          {findAppStatus("cameraApk") && <CameraComponent></CameraComponent>}
+
+          {findAppStatus("messagesApk") && <Messages></Messages>}
+        </div>
         <div
           className={styles.homePages}
           id={styles.homePages}
@@ -240,37 +253,132 @@ function Home() {
             </div>
           </div>
           <div className={styles.homePageTwo}>
-            <div className={styles.apsCont}>
-              <div
-                className={styles.pageOneApks + " " + styles.settingsApk}></div>
-              Settings
-            </div>
+            <div className={styles.appsContainertwo}>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.settingsApk
+                  }></div>
+                Settings
+              </div>
 
-            <div className={styles.apsCont}>
-              <div
-                className={
-                  styles.pageOneApks + " " + styles.fileManagerApk
-                }></div>
-              File Manager
-            </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.fileManagerApk
+                  }></div>
+                File Manager
+              </div>
 
-            <div className={styles.apsCont}>
-              <div
-                className={styles.pageOneApks + " " + styles.weatherApk}></div>
-              Weather
-            </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.weatherApk
+                  }></div>
+                Weather
+              </div>
 
-            <div className={styles.apsCont}>
-              <div
-                className={
-                  styles.pageOneApks + " " + styles.zArchiverApk
-                }></div>
-              ZArchiver
-            </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.zArchiverApk
+                  }></div>
+                ZArchiver
+              </div>
 
-            <div className={styles.apsCont}>
-              <div className={styles.pageOneApks + " " + styles.vlcApk}></div>
-              VLC
+              <div className={styles.apsCont}>
+                <div className={styles.pageOneApks + " " + styles.vlcApk}></div>
+                VLC
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={styles.pageOneApks + " " + styles.toolsApk}></div>
+                Tools
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={styles.pageOneApks + " " + styles.gpayApk}></div>
+                Gpay
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.calendarApk
+                  }></div>
+                Calendar
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.youtubeApk
+                  }></div>
+                YouTube
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={styles.pageOneApks + " " + styles.notesApk}></div>
+                Notes
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.dglockerApk
+                  }></div>
+                Digocker
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.whatsappApk
+                  }></div>
+                WhatsApp
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.spotifyApk
+                  }></div>
+                Spotify
+              </div>
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.threadsApk
+                  }></div>
+                Threads
+              </div>
+
+              <div className={styles.apsCont}>
+                <div className={styles.pageOneApks + " " + styles.codApk}></div>
+                Call of Duty
+              </div>
+
+              <div className={styles.apsCont}>
+                <div className={styles.pageOneApks + " " + styles.cocApk}></div>
+                Clash of Clans
+              </div>
+
+              <div className={styles.apsCont}>
+                <div
+                  className={styles.pageOneApks + " " + styles.tegramApk}></div>
+                Telegram
+              </div>
+
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.instagramApk
+                  }></div>
+                Telegram
+              </div>
+
+              <div className={styles.apsCont}>
+                <div
+                  className={
+                    styles.pageOneApks + " " + styles.nhealthApk
+                  }></div>
+                N Health
+              </div>
             </div>
           </div>
         </div>
@@ -287,38 +395,27 @@ function Home() {
           <div
             className={styles.bottomApks + " " + styles.callApk}
             onClick={() => onAppClick("callApk")}>
-            {findAppStatus("callApk") && <Phone></Phone>}
+            {/* {findAppStatus("callApk") && <Phone></Phone>} */}
           </div>
           <div
             className={styles.bottomApks + " " + styles.contactApk}
             onClick={() => onAppClick("contactApk")}>
-            {findAppStatus("contactApk") && <Contacts></Contacts>}
+            {/* {findAppStatus("contactApk") && <Contacts></Contacts>} */}
           </div>
           <div
             className={styles.bottomApks + " " + styles.cameraApk}
             onClick={() => onAppClick("cameraApk")}>
-            {findAppStatus("cameraApk") && <CameraComponent></CameraComponent>}
+            {/* {findAppStatus("cameraApk") && <CameraComponent></CameraComponent>} */}
           </div>
           <div
             className={styles.bottomApks + " " + styles.messagesApk}
             onClick={() => onAppClick("messagesApk")}>
-            {findAppStatus("messagesApk") && <Messages></Messages>}
+            {/* {findAppStatus("messagesApk") && <Messages></Messages>} */}
           </div>
         </div>
 
-        <div className={styles.navigationCont}>
-          <div className={styles.minimizeBtn}>
-            <FaSquare />
-          </div>
-          <div className={styles.closeBtn}>
-            <div className={styles.circleBorder}>
-              <FaCircle className={styles.closeBtnIcon} />
-            </div>
-          </div>
-          <div className={styles.backBtn} onClick={handleBackBtnClick}>
-            <IoCaretBackOutline className={styles.backBtbIcon} />
-          </div>
-        </div>
+        <NavigationKeys
+          handleBackBtnClick={handleBackBtnClick}></NavigationKeys>
       </div>
     </div>
   );

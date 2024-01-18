@@ -74,10 +74,18 @@ function Messages() {
       name: "The End",
       message: "You have reached the end.",
       time: "7:15 pm",
-    },
+    }
   ];
 
-  const colorList=["yellow","rgb(98, 163, 13)","pink","rgb(81, 81, 255)","orange","lightblue","red"]
+  const colorList = [
+    "yellow",
+    "rgb(98, 163, 13)",
+    "pink",
+    "rgb(81, 81, 255)",
+    "orange",
+    "lightblue",
+    "red",
+  ];
 
   return (
     <div className={styles.messageContainer}>
@@ -99,8 +107,9 @@ function Messages() {
               name={message.name}
               messageInfo={message.message}
               messageTime={message.time}
-              iconColor={colorList[index % colorList.length]}></MessageNotification>
-             
+              iconColor={
+                colorList[index % colorList.length]
+              }></MessageNotification>
           );
         })}
 

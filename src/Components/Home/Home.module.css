@@ -30,8 +30,77 @@
   align-items: center;
   justify-content: space-evenly;
   transform: translateY(10%);
-  scale:2;
+  scale: 2;
   animation: scaleani 0.5s ease 1 forwards;
+}
+
+.appsRenderDiv {
+  width: 0px;
+  height: 0px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  transition: 0.5s ease;
+
+  animation: appCloseAnimation 0.8s ease-out;
+}
+.appFullScreen {
+  width: 400px;
+  height: 800px;
+  top: 0%;
+  border-radius: 0;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  animation: appOpenAnimation 0.8s ease-in;
+}
+
+@keyframes appOpenAnimation {
+  0% {
+    top: 100%;
+    opacity: 0.2;
+  }
+  20% {
+    top: 0%;
+    opacity: 0.4;
+  }
+  40% {
+    top: -5%;
+    opacity: 0.6;
+  }
+  60% {
+    top: -1%;
+    opacity: 0.8;
+  }
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
+
+
+
+  @keyframes appCloseAnimation {
+    0% {
+      top: 0%;
+      opacity: 1;
+    }
+    20% {
+      top: 25%;
+      opacity: 0.8;
+    }
+    40% {
+      top: 50%;
+      opacity: 0.6;
+    }
+    60% {
+      top: 75%;
+      opacity: 0.4;
+    }
+    100% {
+      top: 100%;
+      opacity: 1;
+    }
 }
 
 .homePages {
@@ -42,8 +111,6 @@
   display: flex;
   flex-direction: row;
 }
-
-
 
 .homePageOne {
   width: 100%;
@@ -59,29 +126,152 @@
 
 .homePageTwo {
   width: 100%;
-  height: 100%;
+  height: auto;
   flex: 0 0 auto;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content:center;
-  gap: 4%;
   padding-top: 40px;
   color: white;
   font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 
+.appsContainertwo {
+  width: 95%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 4%;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+}
 
-.settingsApk{
+.appsContainertwo > .apsCont {
+  width: 60px;
+  height: 90px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  align-content: center;
+}
+
+.settingsApk {
   background-image: url(../../assets/Home/settings.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
+.fileManagerApk {
+  background-image: url(../../assets/Home/fileManager.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.weatherApk {
+  background-image: url(../../assets/Home/weather.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.zArchiverApk {
+  background-image: url(../../assets/Home/zarchiver.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.vlcApk {
+  background-image: url(../../assets/Home/vlc.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.toolsApk {
+  background-image: url(../../assets/Home/tools.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.gpayApk {
+  background-image: url(../../assets/Home/gpay.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.calendarApk {
+  background-image: url(../../assets/Home/calendar.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.youtubeApk {
+  background-image: url(../../assets/Home/youtube.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.notesApk {
+  background-image: url(../../assets/Home/notes.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.dglockerApk {
+  background-image: url(../../assets/Home/dglocker.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.whatsappApk {
+  background-image: url(../../assets/Home/whatsapp.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
-
+.spotifyApk {
+  background-image: url(../../assets/Home/spotify.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.threadsApk {
+  background-image: url(../../assets/Home/threads.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.codApk {
+  background-image: url(../../assets/Home/cod.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cocApk {
+  background-image: url(../../assets/Home/coc.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.tegramApk {
+  background-image: url(../../assets/Home/telegram.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.instagramApk {
+  background-image: url(../../assets/Home/instagram.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.nhealthApk {
+  background-image: url(../../assets/Home/nhelth.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 .homePageIndex {
   height: 3%;
@@ -219,6 +409,7 @@
   height: 50px;
   border-radius: 50%;
   background-color: white;
+  border: 0.5px solid rgba(255, 255, 255, 0.13);
 }
 
 .apsCont {
@@ -328,6 +519,7 @@
   align-items: center;
   transform-origin: bottom;
   transition: 0.5s ease;
+  border: 0.5px solid white;
 }
 
 .callApk {
@@ -353,17 +545,6 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.appFullScreen {
-  width: 400px;
-  height: 800px;
-  position: relative;
-  top: 0%;
-  border-radius: 0;
-  position: absolute;
-  background-color: black;
-  background-image: none;
 }
 
 .navigationCont {

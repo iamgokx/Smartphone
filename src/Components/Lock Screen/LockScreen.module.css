@@ -22,11 +22,11 @@
   width: 100%;
   height: 800px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   padding-top: 50px;
- 
+  gap: 4%;
 }
 
 .clockDiv {
@@ -34,7 +34,26 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
 
+.clockDiv span{
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+text-indent: 14px;
+}
+
+.clockDiv a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+.notificationCont{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
 }
 
 .passwordScreen {
@@ -145,26 +164,49 @@
   position: absolute;
   bottom: 0;
   right: 0;
-
 }
 
 .FullcameraAppDiv {
-  width: 100%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0;
+  margin: 0;
+  width: 400px;
   height: 100%;
-background-color: red;
-  align-self: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  transform-origin: bottom right;
 }
 
-.cameraAppDiv:hover {
-  background-color: rgba(255, 255, 255, 0.055);
-}
+/* .cameraAppDiv:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+} */
 
 .lockScreenCameraIcon {
   scale: 1.5;
 }
+
+.lockScreenNavigationKeys {
+  width: 100%;
+  height: 5%;
+  background-color: rgba(255, 255, 255, 0.062);
+  position: absolute;
+  bottom: 0;
+
+display: flex;
+justify-content: end;
+align-items: center;
+gap: 15%;
+}
+
+.navigationCloseBtn{
+ scale: 1;
+}
+
+.navigationBackBtn{
+  width: 40px;
+  height: 20px;
+  scale: 1;
+  margin-right: 20%;
+}
+.navigationBackBtn:hover{
+ background-color: rgba(255, 255, 255, 0.041);
+ border-radius: 5px;
+}
+

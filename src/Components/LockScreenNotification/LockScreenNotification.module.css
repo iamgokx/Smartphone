@@ -1,0 +1,91 @@
+.notificatonCont {
+  width: 90%;
+  height: 90px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5%;
+  align-items: center;
+
+  background-color: rgba(33, 36, 41, 0.884);
+  backdrop-filter: blue(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  transition: 0.4s ease-in-out;
+  transform: translateY(0%);
+  opacity: 1;
+  animation: notificationAnimation 1s ease;
+}
+
+@keyframes notificationAnimation {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.messageContOne {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 100%;
+  justify-content: start;
+  align-items: center;
+  gap: 8%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+}
+
+.message {
+  font-size: 1px;
+  transition: 0.5s ease-in-out;
+}
+
+.settingsIcon {
+  scale: 1.8;
+  margin-left: 7%;
+  background-color: rgb(33, 166, 255);
+  border-radius: 50%;
+  transition: 0.4s ease-in-out;
+}
+
+.settingsNoticicationOpen {
+  scale: 1.8;
+  margin-left: 7%;
+  background-color: rgb(0, 153, 255);
+  border-radius: 50%;
+  margin-top: -27px;
+  transition: 0.4s ease-in-out;
+}
+
+.notificationContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notificationContent p {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
+.notificationContent span {
+  font-size: small;
+  font-family: "Open Sans", sans-serif;
+}
+
+.notificatonCont .iconSpan {
+  background-color: rgba(0, 0, 0, 0.329);
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

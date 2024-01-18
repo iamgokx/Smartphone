@@ -28,7 +28,6 @@ function App() {
 
             <div className={styles.navDiv}>
               {!lockScreenStatus && <Navbar></Navbar>}
-              {/* {lockScreenStatus && <Navbar></Navbar>} */}
             </div>
 
             {lockScreenStatus == true ? (
@@ -36,8 +35,6 @@ function App() {
             ) : (
               <Home></Home>
             )}
-
-            {/* <Home></Home> */}
           </div>
         </div>
         <div className={styles.powerBtn} onClick={powerOff}></div>

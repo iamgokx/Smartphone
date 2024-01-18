@@ -3,6 +3,9 @@ import Clock from "../LockScreenClock/Clock";
 import styles from "./LockScreen.module.css";
 import { FaCamera } from "react-icons/fa6";
 import CameraComponent from "../Camera/CameraComponent";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa6";
+import LockScreenNotification from "../LockScreenNotification/LockScreenNotification";
 
 function LockSCreen({ checkPin }) {
   const [keysClickedCounter, setCounter] = useState(0);
@@ -13,6 +16,10 @@ function LockSCreen({ checkPin }) {
     setCameraIconStatus(false);
     if (secondDiv) {
       secondDiv.scrollIntoView({ behavior: "smooth" });
+      secondDiv.tabIndex = 0;
+      setTimeout(() => {
+        secondDiv.focus();
+      }, 500);
     }
   };
 
@@ -35,6 +42,7 @@ function LockSCreen({ checkPin }) {
       checkPin(enteredPin.current);
       setCounter((prevCounter) => Math.min(Math.max(prevCounter + 1, 0), 4));
       addPins(keysClickedCounter);
+      console.log(enteredPin);
     }
   };
 
@@ -94,40 +102,106 @@ function LockSCreen({ checkPin }) {
 
   const [clockStatus, setClockStatus] = useState(true);
   const [cameraComponenetStatus, setCameraComponenetStatus] = useState(false);
+
+  const camDiv = useRef(null);
+
   const CamerabuttonClick = (event) => {
     event.stopPropagation();
     setClockStatus(false);
-    const camDiv = document.getElementById(styles.cameraAppDiv);
-    camDiv.style.backgroundColor = "black";
-    camDiv.style.borderRadius = "0";
-    camDiv.style.margin = "0px";
-    camDiv.style.width = "400px";
-    camDiv.style.height = "760px";
     setCameraComponenetStatus(true);
+    camDiv.current.classList.add(styles.FullcameraAppDiv);
   };
 
+  const handleBackBtnClickNavigationKeys = (event) => {
+    setClockStatus(true);
+    event.stopPropagation();
+    setCameraComponenetStatus(false);
+    camDiv.current.classList.remove(styles.FullcameraAppDiv);
+    setCameraIconStatus(true);
+  };
+
+  //swip
+  const swipeAreaRef = useRef(null);
+  let startY;
+
+  const handleTouchStart = (event) => {
+    startY = event.touches[0].clientY;
+  };
+
+  const handleTouchMove = (event) => {
+    const currentY = event.touches[0].clientY;
+
+    const deltaY = currentY - startY;
+
+    swipeScreen(deltaY);
+  };
+
+  const swipeScreen = (value) => {
+    const secondDiv = document.querySelector("." + styles.keypadscreen);
+
+    if (value < 0) {
+      secondDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+      setCameraIconStatus(false);
+    }
+  };
+
+
+  //notification
+
+  const [notificationState,setnotificationState] = useState(false);
+const renderNotificaton=()=>{
+  setTimeout(() => {
+  setnotificationState(true);
+  }, 1000);
+}
+renderNotificaton();
   return (
     <div className={styles.LockScreenContainer}>
-      <div className={styles.cont} onClick={handleLockScreenClick}>
+      <div
+        className={styles.cont}
+        onClick={handleLockScreenClick}
+        ref={swipeAreaRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}>
         <section className={styles.clockContainer}>
           <div className={styles.clockDiv}>
             {clockStatus && <Clock></Clock>}
+          <span><a href="https://www.instagram.com/go.kullllll/">Gokul ☁️</a></span>
+          </div>
+          <div className={styles.notificationCont}>
+          
+            {
+           notificationState &&  <LockScreenNotification></LockScreenNotification>
+            }
+         
           </div>
         </section>
+
         <div
           className={styles.cameraAppDiv}
           id={styles.cameraAppDiv}
-          onClick={CamerabuttonClick}>
+          onClick={CamerabuttonClick}
+          ref={camDiv}>
           {!cameraComponenetStatus && camerIconStatus && (
             <FaCamera className={styles.lockScreenCameraIcon} />
           )}
 
           {cameraComponenetStatus && <CameraComponent></CameraComponent>}
+
+          {cameraComponenetStatus && (
+            <div className={styles.lockScreenNavigationKeys}>
+              <FaCircle
+                className={styles.navigationCloseBtn}
+                onClick={handleBackBtnClickNavigationKeys}></FaCircle>
+              <FaAngleLeft
+                className={styles.navigationBackBtn}
+                onClick={handleBackBtnClickNavigationKeys}></FaAngleLeft>
+            </div>
+          )}
         </div>
 
         <section
           className={styles.passwordScreen + " " + styles.keypadscreen}
-          tabIndex={0}
           onKeyDown={keyboardPass}>
           <p>Plese enter your pin</p>
 
