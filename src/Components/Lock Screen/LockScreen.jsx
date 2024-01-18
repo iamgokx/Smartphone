@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Clock from "../LockScreenClock/Clock";
 import styles from "./LockScreen.module.css";
 import { FaCamera } from "react-icons/fa6";
@@ -6,6 +6,7 @@ import CameraComponent from "../Camera/CameraComponent";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa6";
 import LockScreenNotification from "../LockScreenNotification/LockScreenNotification";
+import soundFile from "../../assets/LockScreen/notification.mp3";
 
 function LockSCreen({ checkPin }) {
   const [keysClickedCounter, setCounter] = useState(0);
@@ -145,16 +146,16 @@ function LockSCreen({ checkPin }) {
     }
   };
 
-
   //notification
 
-  const [notificationState,setnotificationState] = useState(false);
-const renderNotificaton=()=>{
-  setTimeout(() => {
-  setnotificationState(true);
-  }, 1000);
-}
-renderNotificaton();
+  const [notificationState, setnotificationState] = useState(false);
+  const renderNotificaton = () => {
+    setTimeout(() => {
+      setnotificationState(true);
+    }, 1000);
+  };
+  renderNotificaton();
+
   return (
     <div className={styles.LockScreenContainer}>
       <div
@@ -166,14 +167,15 @@ renderNotificaton();
         <section className={styles.clockContainer}>
           <div className={styles.clockDiv}>
             {clockStatus && <Clock></Clock>}
-          <span><a href="https://www.instagram.com/go.kullllll/">Gokul ☁️</a></span>
+            <span>
+              <a href="https://www.instagram.com/go.kullllll/">Gokul ☁️</a>
+            </span>
           </div>
           <div className={styles.notificationCont}>
+            {notificationState && (
+              <LockScreenNotification></LockScreenNotification>
+            )}
           
-            {
-           notificationState &&  <LockScreenNotification></LockScreenNotification>
-            }
-         
           </div>
         </section>
 

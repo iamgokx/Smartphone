@@ -78,29 +78,15 @@
   }
 }
 
-
-
-  @keyframes appCloseAnimation {
-    0% {
-      top: 0%;
-      opacity: 1;
-    }
-    20% {
-      top: 25%;
-      opacity: 0.8;
-    }
-    40% {
-      top: 50%;
-      opacity: 0.6;
-    }
-    60% {
-      top: 75%;
-      opacity: 0.4;
-    }
-    100% {
-      top: 100%;
-      opacity: 1;
-    }
+@keyframes appCloseAnimation {
+  0%{
+    top: 0%;
+    opacity:1 ;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 .homePages {
@@ -155,6 +141,7 @@
   display: flex;
   justify-content: start;
   align-content: center;
+  
 }
 
 .settingsApk {
@@ -409,7 +396,7 @@
   height: 50px;
   border-radius: 50%;
   background-color: white;
-  border: 0.5px solid rgba(255, 255, 255, 0.13);
+
 }
 
 .apsCont {
@@ -418,6 +405,7 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .apsCont span {
@@ -519,7 +507,7 @@
   align-items: center;
   transform-origin: bottom;
   transition: 0.5s ease;
-  border: 0.5px solid white;
+
 }
 
 .callApk {
