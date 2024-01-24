@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import LockSCreen from "./Components/Lock Screen/LockScreen";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
+import Phone from "./Components/Phone/Phone";
 
 function App() {
   //password check
@@ -12,6 +13,8 @@ function App() {
   const checkPin = (value) => {
     if (correctPin === value) {
       setLockScreenStatus(false);
+    } else {
+      return false;
     }
   };
 
@@ -26,9 +29,7 @@ function App() {
           <div className={styles.mobileScreenScrollcont}>
             <div className={styles.cameraPunchHole}></div>
 
-            <div className={styles.navDiv}>
-              {!lockScreenStatus && <Navbar></Navbar>}
-            </div>
+            
 
             {lockScreenStatus == true ? (
               <LockSCreen checkPin={checkPin}></LockSCreen>

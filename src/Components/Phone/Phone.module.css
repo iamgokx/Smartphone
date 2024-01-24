@@ -1,5 +1,253 @@
-.phoneContainer{
+.phoneContainer {
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: rgb(27, 28, 30);
+}
+
+.phoneHeaderDiv {
+  width: 100%;
+  height: 12%;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.phoneSearch {
+  width: 90%;
+  height: 50px;
+  border-radius: 55px;
+  background-color: rgb(39, 46, 54);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.phoneHeaderIcons {
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.767);
+}
+
+.searchInput {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+
+  font-weight: 900;
+  width: 60%;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.phoneDiv {
+  width: 100%;
+  height: 88%;
+  /* background-color: rgba(135, 207, 235, 0.534); */
+  /* overflow: hidden; */
+}
+
+.phoneScrolldiv {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneScrolldiv::-webkit-scrollbar {
+  width: 5px;
+  background-color: #1f2531;
+}
+
+.phoneScrolldiv::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.contactsDiv {
+  width: 400px;
+  height: 100%;
+  animation: phoneAni 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes phoneAni {
+  0% {
+    scale: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    scale: 1;
+    transform: translateY(0%);
+  }
+}
+
+.phoneOptionDiv {
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(39, 46, 54);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+
+  color: white;
+
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.phoneOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.phoneOptions p {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.phoneOptionsIcons {
+  padding: 5px 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  border-radius: 20px;
+  color: rgb(0, 204, 255);
+}
+
+.activeDiv {
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  position: absolute;
+  top: 6%;
+  background-color: rgba(0, 183, 255, 0.329);
+  transition: 0.4s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.numpadDiv {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: rgb(167, 200, 254);
+  position: absolute;
+  right: 6%;
+  bottom: 18%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.numpadIcons {
+  margin: -4px;
+  scale: 1.8;
+}
+
+.numnerPad {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  background-color: rgb(37, 42, 48);
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.numDisplay {
+  width: 100%;
+  height: 12%;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.253);
+}
+
+.numberKeysCont {
+  width: 100%;
+  height: 74%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  column-gap: 3%;
+  row-gap: 0%;
+  margin-top: 5px;
+}
+
+.dialPadKey {
+  width: 110px;
+  height: 55px;
+  background-color: rgb(27, 28, 30);
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialPadKey span:nth-child(2) {
+  font-size: 10px;
+}
+
+.keypadNum {
+  font-size: 26px;
+  font-family: "Raleway", sans-serif;
+}
+
+.dialPadKey:hover {
+  transition: all 0.5s;
+  background-color: rgba(255, 255, 255, 0.103);
+}
+
+.callBtn {
+  font-size: 15px;
+  background-color: rgb(93, 184, 116);
+}
+
+.numDisplay {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.displayIcon {
+  font-size: 20px;
+}
+
+.display {
+  font-family: "Montserrat", sans-serif;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
 }

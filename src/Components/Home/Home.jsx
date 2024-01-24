@@ -1,17 +1,443 @@
 import styles from "./Home.module.css";
 import { MdOutlineRefresh } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
-
 import { useState } from "react";
 import CameraComponent from "../Camera/CameraComponent.jsx";
-import Phone from "../Phone/Phone.jsx";
 import Contacts from "../Contacts/Contacts.jsx";
 import Messages from "../Messages/Messages.jsx";
 import { useRef } from "react";
 import NavigationKeys from "../NavigationKeys/NavigationKeys.jsx";
-// import Apps from "../App/Apps.jsx";
-
+import Phone from "../Phone/Phone.jsx";
+import Navbar from "../Navbar/Navbar.jsx";
 function Home() {
+  const contactsList = [
+    {
+      name: "Aaron Adams",
+      phone: "1234567890",
+    },
+    {
+      name: "Abigail Baker",
+      phone: "1234567890",
+    },
+    {
+      name: "Adam Carter",
+      phone: "1234567890",
+    },
+    {
+      name: "Addison Clark",
+      phone: "1234567890",
+    },
+    {
+      name: "Adrian Davis",
+      phone: "1234567890",
+    },
+    {
+      name: "Aiden Edwards",
+      phone: "1234567890",
+    },
+    ,
+    {
+      name: "Adams Aaron",
+      phone: "1234567890",
+    },
+    {
+      name: "Baker Abigail",
+      phone: "1234567890",
+    },
+    {
+      name: "Carter Adam",
+      phone: "1234567890",
+    },
+    {
+      name: "Clark Addison",
+      phone: "1234567890",
+    },
+    {
+      name: "Davis Adrian",
+      phone: "1234567890",
+    },
+    {
+      name: "Edwards Aiden",
+      phone: "1234567890",
+    },
+    {
+      name: "Ellis Alexander",
+      phone: "1234567890",
+    },
+    {
+      name: "Fisher Alice",
+      phone: "1234567890",
+    },
+    {
+      name: "Garcia Amelia",
+      phone: "1234567890",
+    },
+    {
+      name: "Harris Andrew",
+      phone: "1234567890",
+    },
+    {
+      name: "Hayes Anna",
+      phone: "1234567890",
+    },
+    {
+      name: "Ingram Anthony",
+      phone: "1234567890",
+    },
+    {
+      name: "Jenkins Ariana",
+      phone: "1234567890",
+    },
+    {
+      name: "Knight Ashley",
+      phone: "1234567890",
+    },
+    {
+      name: "Lawson Ava",
+      phone: "1234567890",
+    },
+    {
+      name: "Mason Benjamin",
+      phone: "1234567890",
+    },
+    {
+      name: "Mitchell Blake",
+      phone: "1234567890",
+    },
+    {
+      name: "Nelson Bradley",
+      phone: "1234567890",
+    },
+    {
+      name: "Owens Brianna",
+      phone: "1234567890",
+    },
+    {
+      name: "Parker Caleb",
+      phone: "1234567890",
+    },
+    {
+      name: "Quinn Caroline",
+      phone: "1234567890",
+    },
+    {
+      name: "Rivera Carter",
+      phone: "1234567890",
+    },
+    {
+      name: "Ross Charlotte",
+      phone: "1234567890",
+    },
+    {
+      name: "Simmons Chloe",
+      phone: "1234567890",
+    },
+    {
+      name: "Thompson Christopher",
+      phone: "1234567890",
+    },
+    {
+      name: "Turner Clara",
+      phone: "1234567890",
+    },
+    {
+      name: "Underwood Connor",
+      phone: "1234567890",
+    },
+    {
+      name: "Vargas Daniel",
+      phone: "1234567890",
+    },
+    {
+      name: "Vasquez David",
+      phone: "1234567890",
+    },
+    {
+      name: "Walker Elena",
+      phone: "1234567890",
+    },
+    {
+      name: "Xavier Eli",
+      phone: "1234567890",
+    },
+    {
+      name: "Wallace Elijah",
+      phone: "1234567890",
+    },
+    {
+      name: "Young Elizabeth",
+      phone: "1234567890",
+    },
+    {
+      name: "Armstrong Emily",
+      phone: "1234567890",
+    },
+    {
+      name: "Xavier Emma",
+      phone: "1234567890",
+    },
+    {
+      name: "Baker Ethan",
+      phone: "1234567890",
+    },
+    {
+      name: "Davis Eva",
+      phone: "1234567890",
+    },
+    {
+      name: "Edwards Evelyn",
+      phone: "1234567890",
+    },
+    {
+      name: "Ellis Gabriel",
+      phone: "1234567890",
+    },
+    {
+      name: "Garcia Grace",
+      phone: "1234567890",
+    },
+    {
+      name: "Grant Hailey",
+      phone: "1234567890",
+    },
+    {
+      name: "Harris Harper",
+      phone: "1234567890",
+    },
+    {
+      name: "Hayes Henry",
+      phone: "1234567890",
+    },
+    {
+      name: "Ingram Hudson",
+      phone: "1234567890",
+    },
+    {
+      name: "Jenkins Isabella",
+      phone: "1234567890",
+    },
+    {
+      name: "Knight Jack",
+      phone: "1234567890",
+    },
+    {
+      name: "Lawson Jackson",
+      phone: "1234567890",
+    },
+    {
+      name: "Mason James",
+      phone: "1234567890",
+    },
+    {
+      name: "Mitchell Jasmine",
+      phone: "1234567890",
+    },
+    {
+      name: "Nelson Jayden",
+      phone: "1234567890",
+    },
+    {
+      name: "Owens Joseph",
+      phone: "1234567890",
+    },
+    {
+      name: "Parker Joshua",
+      phone: "1234567890",
+    },
+    {
+      name: "Quinn Julia",
+      phone: "1234567890",
+    },
+    {
+      name: "Rivera Justin",
+      phone: "1234567890",
+    },
+    {
+      name: "Ross Katherine",
+      phone: "1234567890",
+    },
+    {
+      name: "Simmons Kayla",
+      phone: "1234567890",
+    },
+    {
+      name: "Thompson Kevin",
+      phone: "1234567890",
+    },
+    {
+      name: "Turner Landon",
+      phone: "1234567890",
+    },
+    {
+      name: "Underwood Lauren",
+      phone: "1234567890",
+    },
+    {
+      name: "Vargas Leah",
+      phone: "1234567890",
+    },
+    {
+      name: "Vasquez Liam",
+      phone: "1234567890",
+    },
+    {
+      name: "Walker Lily",
+      phone: "1234567890",
+    },
+    {
+      name: "Wallace Logan",
+      phone: "1234567890",
+    },
+    {
+      name: "Young Lucy",
+      phone: "1234567890",
+    },
+    {
+      name: "Adams Luna",
+      phone: "1234567890",
+    },
+    {
+      name: "Baker Madeline",
+      phone: "1234567890",
+    },
+    {
+      name: "Mason Carter",
+      phone: "1234567890",
+    },
+    {
+      name: "Clark Matthew",
+      phone: "1234567890",
+    },
+    {
+      name: "Davis Mia",
+      phone: "1234567890",
+    },
+    {
+      name: "Edwards Michael",
+      phone: "1234567890",
+    },
+    {
+      name: "Fisher Michelle",
+      phone: "1234567890",
+    },
+    {
+      name: "Garcia Nathan",
+      phone: "1234567890",
+    },
+    {
+      name: "Harris Natalie",
+      phone: "1234567890",
+    },
+    {
+      name: "Hayes Nathaniel",
+      phone: "1234567890",
+    },
+    {
+      name: "Ingram Noah",
+      phone: "1234567890",
+    },
+    {
+      name: "Jenkins Nora",
+      phone: "1234567890",
+    },
+    {
+      name: "Knight Olivia",
+      phone: "1234567890",
+    },
+    {
+      name: "Lawson Owen",
+      phone: "1234567890",
+    },
+    {
+      name: "Mason Paige",
+      phone: "1234567890",
+    },
+    {
+      name: "Mitchell Parker",
+      phone: "1234567890",
+    },
+    {
+      name: "Nelson Penelope",
+      phone: "1234567890",
+    },
+    {
+      name: "Owens Peyton",
+      phone: "1234567890",
+    },
+    {
+      name: "Parker Rachel",
+      phone: "1234567890",
+    },
+    {
+      name: "Quinn Riley",
+      phone: "1234567890",
+    },
+    {
+      name: "Rivera Robert",
+      phone: "1234567890",
+    },
+    {
+      name: "Ross Ruby",
+      phone: "1234567890",
+    },
+    {
+      name: "Simmons Ryan",
+      phone: "1234567890",
+    },
+    {
+      name: "Thompson Samuel",
+      phone: "1234567890",
+    },
+    {
+      name: "Turner Scarlett",
+      phone: "1234567890",
+    },
+    {
+      name: "Underwood Sophia",
+      phone: "1234567890",
+    },
+    {
+      name: "Vargas Stella",
+      phone: "1234567890",
+    },
+    {
+      name: "Vasquez Thomas",
+      phone: "1234567890",
+    },
+    {
+      name: "Walker Tyler",
+      phone: "1234567890",
+    },
+    {
+      name: "Xavier Victoria",
+      phone: "1234567890",
+    },
+    {
+      name: "Wallace Vincent",
+      phone: "1234567890",
+    },
+    {
+      name: "Young William",
+      phone: "1234567890",
+    },
+    {
+      name: "Adams Xavier",
+      phone: "1234567890",
+    },
+    {
+      name: "Baker Zoe",
+      phone: "1234567890",
+    },
+    {
+      name: "Carter Zoey",
+      phone: "1234567890",
+    },
+    {
+      name: "Davis Zoey",
+      phone: "1234567890",
+    },
+  ];
+
   //home swip
   const pg1click = () => {
     const pgone = document.querySelector("." + styles.homePageOne);
@@ -27,7 +453,7 @@ function Home() {
 
   const [appsStatusList, setAppsStatusList] = useState([
     {
-      appName: "callApk",
+      appName: "phoneApk",
       appStatus: false,
     },
     {
@@ -51,18 +477,16 @@ function Home() {
     apk.classList.remove(styles.appFullScreen);
     setTimeout(() => {
       let activeAppName = null;
-    setAppsStatusList((prevAppsStatusList) => {
-      const updatedList = prevAppsStatusList.map((app) => {
-        if (app.appStatus === true) {
-          activeAppName = app.appName;
+      setAppsStatusList((prevAppsStatusList) => {
+        const updatedList = prevAppsStatusList.map((app) => {
+          if (app.appStatus === true) {
+            activeAppName = app.appName;
+          }
 
-          // const apk = document.querySelector("." + styles[activeAppName]);
-        }
-        
-        return { ...app, appStatus: false };
+          return { ...app, appStatus: false };
+        });
+        return updatedList;
       });
-      return updatedList;
-    });
     }, 500);
   };
 
@@ -80,7 +504,6 @@ function Home() {
         setAppsStatusList(updatedAppsStatusList);
       }
     }, 500);
-    // const apk = document.querySelector("." + styles[app]);
     const apk = document.querySelector("." + styles.appsRenderDiv);
     apk.classList.add(styles.appFullScreen);
   };
@@ -124,13 +547,12 @@ function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.homeCont}>
+        <Navbar></Navbar>
+
         <div className={styles.appsRenderDiv}>
-          {findAppStatus("callApk") && <Phone></Phone>}
-
-          {findAppStatus("contactApk") && <Contacts></Contacts>}
-
-          {findAppStatus("cameraApk") && <CameraComponent></CameraComponent>}
-
+          {findAppStatus("phoneApk") && <Phone></Phone>}||
+          {findAppStatus("contactApk") && <Contacts></Contacts>} ||
+          {findAppStatus("cameraApk") && <CameraComponent></CameraComponent>} ||
           {findAppStatus("messagesApk") && <Messages></Messages>}
         </div>
         <div
@@ -394,7 +816,7 @@ function Home() {
         <div className={styles.homePageFooter}>
           <div
             className={styles.bottomApks + " " + styles.callApk}
-            onClick={() => onAppClick("callApk")}>
+            onClick={() => onAppClick("phoneApk")}>
             {/* {findAppStatus("callApk") && <Phone></Phone>} */}
           </div>
           <div

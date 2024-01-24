@@ -1,12 +1,16 @@
 .navbar {
-  height: 100%;
   width: 100%;
+  height: 2.5%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-
   transform: translateY(-10px);
   animation: scaleani 1s ease 1 forwards;
   font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  top: 0;
+  z-index: 2;
 }
 
 @keyframes scaleani {
@@ -24,6 +28,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  background-color: transparent;
 }
 
 .navTopDivLeft {
@@ -32,7 +37,7 @@
   border-top-left-radius: 30px;
 
   text-indent: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
 }
 .navTopDivRight {

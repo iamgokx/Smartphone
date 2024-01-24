@@ -1,0 +1,86 @@
+.recentCall {
+  width: 95%;
+  height: 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  transition: width 0.6s ease, height 0.6s ease;
+  overflow: hidden;
+  transform-origin: bottom;
+}
+
+
+.hide{
+  display: none;
+}
+
+.recentTop {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.recentBottom{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.callOptions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: small;
+  font-family: "Open sans", sans-serif;
+}
+
+.bottomIcon{
+  font-size: 24px;
+}
+.personIcon {
+  font-size: 50px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.namePhone {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10%;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+.arrowIcon{
+  margin-right: 8px;
+  font-size: 20px;
+  transform: translateY(4px);
+}
+
+
+.callIcon{
+  margin-left: auto;
+  margin-right: 20px;
+  font-size: 27px;
+}
+
+.opened {
+  width: 90%;
+  height: 150px;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.103);
+}

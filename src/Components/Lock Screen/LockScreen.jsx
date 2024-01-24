@@ -34,16 +34,22 @@ function LockSCreen({ checkPin }) {
   };
 
   const keyboardPass = (event) => {
+    const shakeDiv = document.querySelector(
+      "." + styles.passwordKeysClicked
+    );
     if (event.key === "Backspace") {
       enteredPin.current = enteredPin.current.slice(0, -1);
       setCounter((prevCounter) => Math.min(Math.max(prevCounter - 1, 0), 4));
       deletePins(keysClickedCounter);
+      shakeDiv.classList.remove(styles.shake);
     } else {
       enteredPin.current = enteredPin.current + event.key;
       checkPin(enteredPin.current);
       setCounter((prevCounter) => Math.min(Math.max(prevCounter + 1, 0), 4));
       addPins(keysClickedCounter);
-      console.log(enteredPin);
+      if (keysClickedCounter == 3 && checkPin(keysClickedCounter) == false) {
+        shakeDiv.classList.add(styles.shake);
+      }
     }
   };
 
@@ -152,7 +158,7 @@ function LockSCreen({ checkPin }) {
   const renderNotificaton = () => {
     setTimeout(() => {
       setnotificationState(true);
-    }, 1000);
+    }, 2000);
   };
   renderNotificaton();
 
@@ -175,7 +181,6 @@ function LockSCreen({ checkPin }) {
             {notificationState && (
               <LockScreenNotification></LockScreenNotification>
             )}
-          
           </div>
         </section>
 

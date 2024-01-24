@@ -1,0 +1,80 @@
+.favouritesDiv {
+  scale: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  animation: phoneAni 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(24, 26, 28);
+}
+
+.favouritesDiv p {
+  width: 55%;
+  font-family: "Roboto";
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+.vidDiv {
+  width: 100%;
+  height: 50%;
+}
+
+.favouritesDiv span {
+  width: 55%;
+font-size: 13px;
+  font-family: "Roboto";
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(63, 178, 255);
+}
+
+.vidDiv{
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.favouritesVideo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  scale: 1;
+  border: 0;
+  box-shadow: 0;
+  outline: 0;
+  padding: 0;
+
+  animation: vidAni 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes phoneAni {
+  0% {
+    scale: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    scale: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes vidAni {
+  0% {
+    scale: 0.8;
+    transform: translateX(50%);
+  }
+  100% {
+    scale: 1;
+  }
+}
